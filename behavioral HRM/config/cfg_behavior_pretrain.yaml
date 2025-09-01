@@ -1,0 +1,41 @@
+# Behavior training config
+
+defaults:
+  - arch: hrm_behavior
+  - _self_
+
+hydra:
+  output_subdir: null
+
+# Data path (set to your generated dataset root)
+data_path: data/behavior-v1
+
+# Hyperparams - Training
+global_batch_size: 256
+
+epochs: 20000
+eval_interval: 2000
+checkpoint_every_eval: true
+
+lr: 1e-4
+lr_min_ratio: 1.0
+lr_warmup_steps: 2000
+
+# Standard hyperparameter settings for LM
+beta1: 0.9
+beta2: 0.95
+weight_decay: 0.1
+puzzle_emb_weight_decay: 0.0  # no puzzle emb
+
+# Hyperparams - Puzzle embeddings training
+puzzle_emb_lr: 0.0  # no puzzle emb
+
+# Names
+project_name: Behavior ACT-torch
+run_name: hrm_behavior
+checkpoint_path: null
+
+# Extras
+seed: 0
+eval_save_outputs: []
+

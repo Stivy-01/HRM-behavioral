@@ -1,0 +1,15 @@
+-time aware    
+    python -c "from HRM.behavior.build_behavior_dataset import BuilderConfig, build_dataset; \
+    cfg=BuilderConfig(sqlite_paths=[r'D:\lmt analysis\13.9.24 baseline wt.sqlite'], \
+    output_root=r'C:\Users\andre\Desktop\apps\hrm\HRM\data\behavior-v1', seq_len=1024, stride=512); \
+    build_dataset(cfg)"
+
+no-time
+    python -c "from HRM.behavior.build_behavior_dataset import BuilderConfig, build_dataset; \
+    cfg=BuilderConfig(sqlite_paths=[r'D:\lmt analysis\13.9.24 baseline wt.sqlite'], \
+    output_root=r'C:\Users\andre\Desktop\apps\hrm\HRM\data\behavior-v1-no-time', seq_len=1024, stride=512, include_time_tokens=False); \
+    build_dataset(cfg)"    
+
+validate
+    $env:HRM_BEHAVIOR_DATA="C:\Users\andre\Desktop\apps\hrm\HRM\data\behavior-v1"; python HRM\scripts\validate_behavior_dataset.py
+    $env:HRM_BEHAVIOR_DATA="C:\Users\andre\Desktop\apps\hrm\HRM\data\behavior-v1-no-time"; python HRM\scripts\validate_behavior_dataset.py

@@ -1,0 +1,13 @@
+{
+  "train": [
+    "D:/lmt analysis/13.9.24 baseline wt.sqlite",
+    "D:/lmt analysis/14.9.24 baseline wt.sqlite"
+  ],
+  "val": [
+    "D:/lmt analysis/13.9.24 stress wt.sqlite"
+  ],
+  "test": [
+    "D:/lmt analysis/14.9.24 stress wt.sqlite"
+  ]
+}
+
